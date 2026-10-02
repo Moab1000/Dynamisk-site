@@ -50,11 +50,6 @@
   color: var(--white);
 }
 
-.no_products {
-  font-weight: 600;
-  color: var(--grey-text);
-}
-
 /* ===== Produktliste ===== */
 .product_list_container {
   display: grid;

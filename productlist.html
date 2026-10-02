@@ -1,71 +1,184 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Product List</title>
-  </head>
-  <body>
-    <header>
-      <div class="header_content">
-        <h1>Products</h1>
-        <p>This is the good stuff you should buy</p>
-      </div>
-    </header>
 
-    <main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="productlist.css" />
+  <script src="list.js" defer></script>
+  <title>Product List</title>
+</head>
 
-      <h2>Nike</h2>
-      <p>Products from Nike</p>
-      
-      <div class="product_list_container">
-        <article class="product">
-          <img src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp" alt="Placeholder" />
-          <h3>Sahara Team India Fanwear Round Neck Jersey</h3>
-          <p>Nike - Tshirts</p>
-          <div>
-            <p>895 kr</p>
-          </div>
-          <p><a href="#">Read More</a></p>
-          <p class="soldout_tag">Sold Out</p>
-        </article>
+<body>
+  <header>
+    <a href="index.html" class="logo">Fashion<span>Я</span>Us</a>
+    <nav>
+      <a href="index.html">Categories</a>
+      <a href="index.html">Brands</a>
+      <a href="index.html">Seasons</a>
+    </nav>
+  </header>
 
-        <article class="product discount soldout">
-          <img src="https://kea-alt-del.dk/t7/images/webp/640/1164.webp" alt="Placeholder" />
-          <h3>Blue T20 Indian Cricket Jersey</h3>
-          <p>Nike - Tshirts</p>
-          <div>
-            <p>1148 kr</p>
-            <p>1595 kr - 28%</p>
-          </div>
-          <p><a href="#">Read More</a></p>
-          <p class="soldout_tag">Sold Out</p>
-        </article>
+  <main>
 
-        <article class="product discount">
-          <img src="https://kea-alt-del.dk/t7/images/webp/640/1165.webp" alt="Placeholder" />
-          <h3>Mean Team India Cricket Jersey</h3>
-          <p>Nike - Tshirts</p>
-          <div>
-            <p>1372 kr</p>
-            <p>2495 kr - 45%</p>
-          </div>
-          <p><a href="#">Read More</a></p>
-          <p class="soldout_tag">Sold Out</p>
-        </article>
+    <h1>All Products</h1>
 
-        <article class="product soldout">
-          <img src="https://kea-alt-del.dk/t7/images/webp/640/1662.webp" alt="Placeholder" />
-          <h3>Blue indrunner Jacket</h3>
-          <p>Nike - Tshirts</p>
-          <div>
-            <p>3495 kr</p>
-          </div>
-          <p><a href="#">Read More</a></p>
-          <p class="soldout_tag">Sold Out</p>
-        </article>
-      </div>
-    </main>
-  </body>
+    <nav>
+      <button id="alle">Alle</button>
+      <button id="tilbud">Tilbud</button>
+      <button id="paaLager">På lager</button>
+    </nav>
+
+    <div class="product_list_container">
+      <!--
+      <article class="product nedsat">
+        <img src="img/ape_krone.jpg" alt="Royal Gold Crown" />
+        <h3>Royal Gold Crown</h3>
+        <p class="product_type">Accessories | Ape Club</p>
+        <div class="price">
+          <p class="normal_pris">DKK 1299,-</p>
+          <p class="ny_pris">Now DKK 909,- <span>-30%</span></p>
+        </div>
+        <p><a href="product.html">Read More</a></p>
+        <p class="soldout_tag">Sold Out</p>
+      </article>
+
+      <article class="product udsolgt">
+        <img src="img/ape_kasket.jpg" alt="Black Rib Turtleneck" />
+        <h3>Black Rib Turtleneck</h3>
+        <p class="product_type">Apparel | Ape Club</p>
+        <div class="price">
+          <p class="normal_pris">DKK 699,-</p>
+          <p class="ny_pris">Now DKK 0,- <span>-0%</span></p>
+        </div>
+        <p><a href="product.html">Read More</a></p>
+        <p class="soldout_tag">Sold Out</p>
+      </article>
+
+      <article class="product nedsat udsolgt">
+        <img src="img/ape_jakke.jpg" alt="Neon Track Jacket" />
+        <h3>Neon Track Jacket</h3>
+        <p class="product_type">Sporting Goods | Ape Club</p>
+        <div class="price">
+          <p class="normal_pris">DKK 899,-</p>
+          <p class="ny_pris">Now DKK 674,- <span>-25%</span></p>
+        </div>
+        <p><a href="product.html">Read More</a></p>
+        <p class="soldout_tag">Sold Out</p>
+      </article>
+
+      <article class="product">
+        <img src="img/ape_skelet.jpg" alt="Skeleton T-shirt" />
+        <h3>Skeleton T-shirt</h3>
+        <p class="product_type">Free Items | Ape Club</p>
+        <div class="price">
+          <p class="normal_pris">DKK 0,-</p>
+          <p class="ny_pris">Now DKK 0,- <span>-0%</span></p>
+        </div>
+        <p><a href="product.html">Read More</a></p>
+        <p class="soldout_tag">Sold Out</p>
+      </article>
+
+      <article class="product nedsat">
+        <img src="img/ape_krone.jpg" alt="Royal Gold Crown" />
+        <h3>Royal Gold Crown</h3>
+        <p class="product_type">Accessories | Ape Club</p>
+        <div class="price">
+          <p class="normal_pris">DKK 1299,-</p>
+          <p class="ny_pris">Now DKK 909,- <span>-30%</span></p>
+        </div>
+        <p><a href="product.html">Read More</a></p>
+        <p class="soldout_tag">Sold Out</p>
+      </article>
+
+      <article class="product udsolgt">
+        <img src="img/ape_kasket.jpg" alt="Black Rib Turtleneck" />
+        <h3>Black Rib Turtleneck</h3>
+        <p class="product_type">Apparel | Ape Club</p>
+        <div class="price">
+          <p class="normal_pris">DKK 699,-</p>
+          <p class="ny_pris">Now DKK 0,- <span>-0%</span></p>
+        </div>
+        <p><a href="product.html">Read More</a></p>
+        <p class="soldout_tag">Sold Out</p>
+      </article>
+
+      <article class="product nedsat udsolgt">
+        <img src="img/ape_jakke.jpg" alt="Neon Track Jacket" />
+        <h3>Neon Track Jacket</h3>
+        <p class="product_type">Sporting Goods | Ape Club</p>
+        <div class="price">
+          <p class="normal_pris">DKK 899,-</p>
+          <p class="ny_pris">Now DKK 674,- <span>-25%</span></p>
+        </div>
+        <p><a href="product.html">Read More</a></p>
+        <p class="soldout_tag">Sold Out</p>
+      </article>
+
+      <article class="product">
+        <img src="img/ape_skelet.jpg" alt="Skeleton T-shirt" />
+        <h3>Skeleton T-shirt</h3>
+        <p class="product_type">Free Items | Ape Club</p>
+        <div class="price">
+          <p class="normal_pris">DKK 0,-</p>
+          <p class="ny_pris">Now DKK 0,- <span>-0%</span></p>
+        </div>
+        <p><a href="product.html">Read More</a></p>
+        <p class="soldout_tag">Sold Out</p>
+      </article>
+
+      <article class="product nedsat">
+        <img src="img/ape_krone.jpg" alt="Royal Gold Crown" />
+        <h3>Royal Gold Crown</h3>
+        <p class="product_type">Accessories | Ape Club</p>
+        <div class="price">
+          <p class="normal_pris">DKK 1299,-</p>
+          <p class="ny_pris">Now DKK 909,- <span>-30%</span></p>
+        </div>
+        <p><a href="product.html">Read More</a></p>
+        <p class="soldout_tag">Sold Out</p>
+      </article>
+
+      <article class="product udsolgt">
+        <img src="img/ape_kasket.jpg" alt="Black Rib Turtleneck" />
+        <h3>Black Rib Turtleneck</h3>
+        <p class="product_type">Apparel | Ape Club</p>
+        <div class="price">
+          <p class="normal_pris">DKK 699,-</p>
+          <p class="ny_pris">Now DKK 0,- <span>-0%</span></p>
+        </div>
+        <p><a href="product.html">Read More</a></p>
+        <p class="soldout_tag">Sold Out</p>
+      </article>
+
+      <article class="product nedsat udsolgt">
+        <img src="img/ape_jakke.jpg" alt="Neon Track Jacket" />
+        <h3>Neon Track Jacket</h3>
+        <p class="product_type">Sporting Goods | Ape Club</p>
+        <div class="price">
+          <p class="normal_pris">DKK 899,-</p>
+          <p class="ny_pris">Now DKK 674,- <span>-25%</span></p>
+        </div>
+        <p><a href="product.html">Read More</a></p>
+        <p class="soldout_tag">Sold Out</p>
+      </article>
+
+      <article class="product">
+        <img src="img/ape_skelet.jpg" alt="Skeleton T-shirt" />
+        <h3>Skeleton T-shirt</h3>
+        <p class="product_type">Free Items | Ape Club</p>
+        <div class="price">
+          <p class="normal_pris">DKK 0,-</p>
+          <p class="ny_pris">Now DKK 0,- <span>-0%</span></p>
+        </div>
+        <p><a href="product.html">Read More</a></p>
+        <p class="soldout_tag">Sold Out</p>
+      </article>
+      -->
+
+    </div>
+  </main>
+</body>
+
 </html>

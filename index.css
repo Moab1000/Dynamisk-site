@@ -1,0 +1,25 @@
+.category_list_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.category_list_container a {
+  display: grid;
+  place-items: center;
+  height: 200px;
+  font-size: 22px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: var(--black);
+  background-color: var(--grey-light);
+  border-left: 6px solid var(--orange);
+  transition: background-color 0.2s;
+}
+
+.category_list_container a:hover {
+  background-color: var(--orange);
+  color: var(--white);
+}

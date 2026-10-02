@@ -1,0 +1,180 @@
+/* ===== Brødkrummer ===== */
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--grey-text);
+  margin-bottom: 32px;
+}
+
+.breadcrumbs li {
+  list-style: none;
+}
+
+.breadcrumbs li + li::before {
+  content: "/";
+  margin-right: 8px;
+}
+
+.breadcrumbs a:hover {
+  color: var(--orange);
+}
+
+/* ===== Layout ===== */
+.product_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.produkt_billede {
+  position: relative;
+}
+
+.produkt_billede img {
+  width: 100%;
+  background-color: var(--grey-light);
+}
+
+/* ===== Produktinformation ===== */
+.product_info h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.product_info dt {
+  margin-top: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--grey-text);
+}
+
+.product_info dd {
+  font-size: 18px;
+}
+
+.product_info .description {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Beskrivelsen fra API'et har en tabel med fast bredde */
+.description table {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* ===== Køb-boks ===== */
+.koeb_boks {
+  align-self: start;
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background-color: var(--grey-light);
+  border-top: 6px solid var(--orange);
+}
+
+.koeb_boks h1 {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+.product_type {
+  font-size: 14px;
+  color: var(--grey-text);
+}
+
+.normal_pris {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.nedsat .normal_pris {
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: line-through;
+  color: var(--grey-text);
+}
+
+.ny_pris {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--sale);
+}
+
+.ny_pris span {
+  margin-left: 8px;
+  padding: 2px 6px;
+  font-size: 12px;
+  background-color: var(--sale);
+  color: var(--white);
+  vertical-align: middle;
+}
+
+.koeb_boks form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.koeb_boks label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.koeb_boks select {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 8px 12px;
+  border: 1px solid var(--black);
+  background-color: var(--white);
+}
+
+.koeb_boks button {
+  width: 100%;
+}
+
+/* ===== Udsolgt ===== */
+.soldout_tag {
+  visibility: hidden;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.udsolgt .soldout_tag {
+  visibility: visible;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.udsolgt .produkt_billede img {
+  opacity: 40%;
+}
+
+.udsolgt .koeb_boks button {
+  opacity: 40%;
+  pointer-events: none;
+}
+
+/* ===== Større skærme: 3 kolonner ===== */
+@media (min-width: 900px) {
+  .product_container {
+    grid-template-columns: 1.2fr 1fr 320px;
+  }
+}

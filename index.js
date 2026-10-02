@@ -6,10 +6,11 @@ const seasonURL = "https://kea-alt-del.dk/t7/api/seasons";
 const categoryContainer = document.querySelector(".category_list_container");
 const seasonContainer = document.querySelector(".season_list_container");
 
-// Mine egne billeder til sæsonerne (Fall har intet billede endnu)
+// Mine egne billeder til sæsonerne
 const seasonImages = {
   Spring: "img/Spring.webp",
   Summer: "img/sommer.webp",
+  Fall: "img/efteraar.jpg",
   Winter: "img/vinter.webp",
 };
 

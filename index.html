@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
@@ -13,25 +14,20 @@
 <body>
 
     <header>
-        <a href="index.html" class="logo">Fashion<span>Я</span>Us</a>
+        <a href="index.html" class="logo"><img src="img/logo.png" alt="FashionRUs logo">Fashion<span>Я</span>Us</a>
         <nav>
             <a href="index.html">Categories</a>
-            <a href="index.html">Brands</a>
-            <a href="index.html">Seasons</a>
+            <a href="productlist.html">All products</a>
+            <a href="index.html#seasons">Seasons</a>
         </nav>
     </header>
 
     <main>
         <h1>Categories</h1>
+        <div class="category_list_container"></div>
 
-        <div class="category_list_container">
-            <a href="productlist.html?category=Accessories">Accessories</a>
-            <a href="productlist.html?category=Apparel">Apparel</a>
-            <a href="productlist.html?category=Footwear">Footwear</a>
-            <a href="productlist.html?category=Free Items">Free Items</a>
-            <a href="productlist.html?category=Personal Care">Personal Care</a>
-            <a href="productlist.html?category=Sporting Goods">Sporting Goods</a>
-        </div>
+        <h2 id="seasons">Shop by season</h2>
+        <div class="season_list_container"></div>
     </main>
 
 </body>

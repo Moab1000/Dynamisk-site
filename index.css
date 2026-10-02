@@ -23,3 +23,55 @@
   background-color: var(--orange);
   color: var(--white);
 }
+
+/* ===== Sæsoner ===== */
+h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 56px 0 24px;
+}
+
+.season_list_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.season_card {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  text-decoration: none;
+  background-color: var(--orange);
+}
+
+.season_card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.season_card span {
+  position: relative;
+  padding: 8px 20px;
+  font-size: 22px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: var(--white);
+  border-left: 6px solid var(--orange);
+}
+
+.season_card:hover img {
+  transform: scale(1.05);
+}
+
+.season_card:hover span {
+  background-color: var(--orange);
+  color: var(--white);
+}

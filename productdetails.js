@@ -27,8 +27,6 @@ function showProduct(product) {
     discountClass = "nedsat";
   }
 
-  document.title = product.productdisplayname;
-
   document.querySelector(".breadcrumbs").innerHTML = `
     <li><a href="index.html">Home</a></li>
     <li><a href="productlist.html?category=${product.category}">${product.category}</a></li>
@@ -59,7 +57,7 @@ function showProduct(product) {
       </dl>
 
       <h2 class="brand">${product.brandname}</h2>
-      <p>${product.brandbio || ""}</p>
+      <p>${product.brandbio}</p>
     </div>
 
     <div class="koeb_boks">

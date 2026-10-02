@@ -17,11 +17,11 @@ if (selectedSeason) {
 const listContainer = document.querySelector(".product_list_container");
 let allProducts = [];
 
-// Overskrift: viser hvad man kigger på
-if (selectedCategory && selectedSeason) {
-  document.querySelector("h1").textContent = `${selectedCategory} · ${selectedSeason}`;
-} else if (selectedCategory || selectedSeason) {
-  document.querySelector("h1").textContent = selectedCategory || selectedSeason;
+// Overskrift
+if (selectedCategory) {
+  document.querySelector("h1").textContent = selectedCategory;
+} else if (selectedSeason) {
+  document.querySelector("h1").textContent = selectedSeason;
 }
 
 function getData(url) {
@@ -39,14 +39,6 @@ function getData(url) {
 document.querySelector(".back_button").addEventListener("click", () => {
   window.history.back();
 });
-
-// Hjælper: farv den valgte knap orange
-function markSelected(buttons, clickedButton) {
-  buttons.forEach((button) => {
-    button.classList.remove("selected");
-  });
-  clickedButton.classList.add("selected");
-}
 
 // Filter: Category (skifter URL'en, så API'et henter nye produkter)
 const categoryButtons = document.querySelectorAll(".filter_category button");
@@ -86,7 +78,10 @@ seasonButtons.forEach((button) => {
 const whoButtons = document.querySelectorAll(".filter_who button");
 whoButtons.forEach((button) => {
   button.addEventListener("click", (evt) => {
-    markSelected(whoButtons, evt.target);
+    whoButtons.forEach((button) => {
+      button.classList.remove("selected");
+    });
+    evt.target.classList.add("selected");
 
     if (evt.target.dataset.gender === "All") {
       showProducts(allProducts);
@@ -101,7 +96,10 @@ whoButtons.forEach((button) => {
 const dealButtons = document.querySelectorAll(".filter_deals button");
 dealButtons.forEach((button) => {
   button.addEventListener("click", (evt) => {
-    markSelected(dealButtons, evt.target);
+    dealButtons.forEach((button) => {
+      button.classList.remove("selected");
+    });
+    evt.target.classList.add("selected");
     const deal = evt.target.dataset.deal;
 
     if (deal === "All") {
@@ -120,7 +118,10 @@ dealButtons.forEach((button) => {
 const priceButtons = document.querySelectorAll(".filter_price button");
 priceButtons.forEach((button) => {
   button.addEventListener("click", (evt) => {
-    markSelected(priceButtons, evt.target);
+    priceButtons.forEach((button) => {
+      button.classList.remove("selected");
+    });
+    evt.target.classList.add("selected");
 
     const sorted = allProducts.sort((a, b) => {
       const priceA = a.discount ? getDiscountPrice(a.price, a.discount) : a.price;
@@ -137,11 +138,6 @@ priceButtons.forEach((button) => {
 
 function showProducts(products) {
   listContainer.innerHTML = "";
-
-  if (products.length === 0) {
-    listContainer.innerHTML = `<p class="no_products">No products found</p>`;
-    return;
-  }
 
   products.forEach((product) => {
     let soldoutClass = "";

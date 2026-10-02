@@ -62,14 +62,22 @@ header {
   gap: 16px;
   padding: 24px 0;
   margin-bottom: 40px;
-  border-bottom: 3px solid var(--black);
+  border-bottom: 3px solid var(--orange);
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 36px;
   font-weight: 800;
   letter-spacing: -1px;
   text-decoration: none;
+}
+
+.logo img {
+  width: 64px;
+  height: 64px;
 }
 
 .logo span {

@@ -1,15 +1,15 @@
-/* ===== Skrifttype ===== */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
-
-/* ===== Farver (Zalando-inspireret) ===== */
+/* ===== Farver ===== */
 :root {
   --orange: #ff6900;
   --orange-dark: #e05a00;
+  --orange-mid: #ffa866;
+  --orange-light: #ffd2ad;
+  --orange-bg: #fff6ef;
   --black: #1a1a1a;
   --grey-light: #f5f5f5;
   --grey-line: #e5e5e5;
   --grey-text: #6b6b6b;
-  --sale: #e3001b;
+  --sale: #ff4444;
   --white: #ffffff;
 }
 
@@ -29,28 +29,24 @@ img {
 
 /* ===== Generelt ===== */
 body {
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 16px;
+  font-family: system-ui, sans-serif;
   line-height: 1.5;
-  color: var(--black);
-  background-color: var(--white);
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+  color: black;
+  background-color: var(--orange-bg);
 }
 
 a {
-  color: inherit;
-}
-
-h1 {
-  font-size: 40px;
-  font-weight: 800;
-  margin-bottom: 32px;
+  color: black;
 }
 
 main {
-  padding-bottom: 64px;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 0 16px 64px;
+}
+
+h1 {
+  margin-bottom: 16px;
 }
 
 /* ===== Header ===== */
@@ -59,25 +55,23 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
-  padding: 24px 0;
+  padding: 8px 16px;
   margin-bottom: 40px;
-  border-bottom: 3px solid var(--orange);
+  background-color: var(--orange-light);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 36px;
-  font-weight: 800;
-  letter-spacing: -1px;
+  gap: 8px;
+  font-size: 28px;
+  font-weight: bold;
   text-decoration: none;
 }
 
 .logo img {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
 }
 
 .logo span {
@@ -86,19 +80,16 @@ header {
 
 nav {
   display: flex;
-  gap: 24px;
+  gap: 16px;
 }
 
 nav a {
-  font-size: 15px;
-  font-weight: 600;
+  font-weight: bold;
   text-decoration: none;
-  padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
 }
 
 nav a:hover {
-  border-bottom-color: var(--orange);
+  text-decoration: underline;
 }
 
 /* ===== Knapper ===== */
@@ -109,16 +100,10 @@ button {
   padding: 14px 24px;
   border: none;
   background-color: var(--orange);
-  color: var(--white);
+  color: white;
   cursor: pointer;
 }
 
 button:hover {
   background-color: var(--orange-dark);
-}
-
-a:focus-visible,
-button:focus-visible {
-  outline: 3px solid var(--orange);
-  outline-offset: 2px;
 }

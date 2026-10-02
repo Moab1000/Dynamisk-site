@@ -40,17 +40,13 @@
 /* ===== Produktinformation ===== */
 .product_info h2 {
   font-size: 24px;
-  font-weight: 800;
+  font-weight: bold;
   margin-bottom: 16px;
 }
 
 .product_info dt {
   margin-top: 16px;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--grey-text);
+  font-weight: bold;
 }
 
 .product_info dd {
@@ -59,8 +55,6 @@
 
 .product_info .brand {
   margin-top: 40px;
-  padding-left: 12px;
-  border-left: 6px solid var(--orange);
 }
 
 .product_info .description {
@@ -77,14 +71,11 @@
 /* ===== Køb-boks ===== */
 .koeb_boks {
   align-self: start;
-  position: sticky;
-  top: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 24px;
-  background-color: var(--grey-light);
-  border-top: 6px solid var(--orange);
+  background-color: var(--orange-light);
 }
 
 .koeb_boks h1 {
@@ -99,7 +90,7 @@
 
 .normal_pris {
   font-size: 24px;
-  font-weight: 800;
+  font-weight: bold;
 }
 
 .nedsat .normal_pris {
@@ -111,7 +102,7 @@
 
 .ny_pris {
   font-size: 24px;
-  font-weight: 800;
+  font-weight: bold;
   color: var(--sale);
 }
 
@@ -160,13 +151,9 @@
 
 .udsolgt .soldout_tag {
   visibility: visible;
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background-color: var(--black);
-  color: var(--white);
+  padding: 10px;
+  font-weight: bold;
+  background-color: rgb(191, 201, 209);
 }
 
 .udsolgt .produkt_billede img {

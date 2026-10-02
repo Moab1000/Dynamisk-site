@@ -4,180 +4,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="img/logo.png">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="productlist.css" />
-  <script src="list.js" defer></script>
+  <script src="productlist.js" defer></script>
   <title>Product List</title>
 </head>
 
 <body>
   <header>
-    <a href="index.html" class="logo">Fashion<span>Я</span>Us</a>
+    <a href="index.html" class="logo"><img src="img/logo.png" alt="FashionRUs logo">Fashion<span>Я</span>Us</a>
     <nav>
       <a href="index.html">Categories</a>
-      <a href="index.html">Brands</a>
-      <a href="index.html">Seasons</a>
+      <a href="productlist.html">All products</a>
+      <a href="index.html#seasons">Seasons</a>
     </nav>
   </header>
 
   <main>
+    <button class="back_button">&larr; Back</button>
 
     <h1>All Products</h1>
 
-    <nav>
-      <button id="alle">Alle</button>
-      <button id="tilbud">Tilbud</button>
-      <button id="paaLager">På lager</button>
-    </nav>
+    <section class="filters">
+      <div class="filter_group filter_category">
+        <h3>Category</h3>
+        <button data-category="All">All</button>
+        <button data-category="Accessories">Accessories</button>
+        <button data-category="Apparel">Apparel</button>
+        <button data-category="Footwear">Footwear</button>
+        <button data-category="Free Items">Free Items</button>
+        <button data-category="Personal Care">Personal Care</button>
+        <button data-category="Sporting Goods">Sporting Goods</button>
+      </div>
 
-    <div class="product_list_container">
-      <!--
-      <article class="product nedsat">
-        <img src="img/ape_krone.jpg" alt="Royal Gold Crown" />
-        <h3>Royal Gold Crown</h3>
-        <p class="product_type">Accessories | Ape Club</p>
-        <div class="price">
-          <p class="normal_pris">DKK 1299,-</p>
-          <p class="ny_pris">Now DKK 909,- <span>-30%</span></p>
-        </div>
-        <p><a href="product.html">Read More</a></p>
-        <p class="soldout_tag">Sold Out</p>
-      </article>
+      <div class="filter_group filter_season">
+        <h3>Season</h3>
+        <button data-season="All">All</button>
+        <button data-season="Spring">Spring</button>
+        <button data-season="Summer">Summer</button>
+        <button data-season="Fall">Fall</button>
+        <button data-season="Winter">Winter</button>
+      </div>
 
-      <article class="product udsolgt">
-        <img src="img/ape_kasket.jpg" alt="Black Rib Turtleneck" />
-        <h3>Black Rib Turtleneck</h3>
-        <p class="product_type">Apparel | Ape Club</p>
-        <div class="price">
-          <p class="normal_pris">DKK 699,-</p>
-          <p class="ny_pris">Now DKK 0,- <span>-0%</span></p>
-        </div>
-        <p><a href="product.html">Read More</a></p>
-        <p class="soldout_tag">Sold Out</p>
-      </article>
+      <div class="filter_group filter_who">
+        <h3>Who</h3>
+        <button data-gender="All">Everyone</button>
+        <button data-gender="Women">Women</button>
+        <button data-gender="Men">Men</button>
+        <button data-gender="Unisex">Unisex</button>
+      </div>
 
-      <article class="product nedsat udsolgt">
-        <img src="img/ape_jakke.jpg" alt="Neon Track Jacket" />
-        <h3>Neon Track Jacket</h3>
-        <p class="product_type">Sporting Goods | Ape Club</p>
-        <div class="price">
-          <p class="normal_pris">DKK 899,-</p>
-          <p class="ny_pris">Now DKK 674,- <span>-25%</span></p>
-        </div>
-        <p><a href="product.html">Read More</a></p>
-        <p class="soldout_tag">Sold Out</p>
-      </article>
+      <div class="filter_group filter_deals">
+        <h3>Deals</h3>
+        <button data-deal="All">All</button>
+        <button data-deal="Sale">On sale</button>
+        <button data-deal="InStock">In stock</button>
+      </div>
 
-      <article class="product">
-        <img src="img/ape_skelet.jpg" alt="Skeleton T-shirt" />
-        <h3>Skeleton T-shirt</h3>
-        <p class="product_type">Free Items | Ape Club</p>
-        <div class="price">
-          <p class="normal_pris">DKK 0,-</p>
-          <p class="ny_pris">Now DKK 0,- <span>-0%</span></p>
-        </div>
-        <p><a href="product.html">Read More</a></p>
-        <p class="soldout_tag">Sold Out</p>
-      </article>
+      <div class="filter_group filter_price">
+        <h3>Price</h3>
+        <button data-sort="low">Cheapest first</button>
+        <button data-sort="high">Most expensive first</button>
+      </div>
+    </section>
 
-      <article class="product nedsat">
-        <img src="img/ape_krone.jpg" alt="Royal Gold Crown" />
-        <h3>Royal Gold Crown</h3>
-        <p class="product_type">Accessories | Ape Club</p>
-        <div class="price">
-          <p class="normal_pris">DKK 1299,-</p>
-          <p class="ny_pris">Now DKK 909,- <span>-30%</span></p>
-        </div>
-        <p><a href="product.html">Read More</a></p>
-        <p class="soldout_tag">Sold Out</p>
-      </article>
-
-      <article class="product udsolgt">
-        <img src="img/ape_kasket.jpg" alt="Black Rib Turtleneck" />
-        <h3>Black Rib Turtleneck</h3>
-        <p class="product_type">Apparel | Ape Club</p>
-        <div class="price">
-          <p class="normal_pris">DKK 699,-</p>
-          <p class="ny_pris">Now DKK 0,- <span>-0%</span></p>
-        </div>
-        <p><a href="product.html">Read More</a></p>
-        <p class="soldout_tag">Sold Out</p>
-      </article>
-
-      <article class="product nedsat udsolgt">
-        <img src="img/ape_jakke.jpg" alt="Neon Track Jacket" />
-        <h3>Neon Track Jacket</h3>
-        <p class="product_type">Sporting Goods | Ape Club</p>
-        <div class="price">
-          <p class="normal_pris">DKK 899,-</p>
-          <p class="ny_pris">Now DKK 674,- <span>-25%</span></p>
-        </div>
-        <p><a href="product.html">Read More</a></p>
-        <p class="soldout_tag">Sold Out</p>
-      </article>
-
-      <article class="product">
-        <img src="img/ape_skelet.jpg" alt="Skeleton T-shirt" />
-        <h3>Skeleton T-shirt</h3>
-        <p class="product_type">Free Items | Ape Club</p>
-        <div class="price">
-          <p class="normal_pris">DKK 0,-</p>
-          <p class="ny_pris">Now DKK 0,- <span>-0%</span></p>
-        </div>
-        <p><a href="product.html">Read More</a></p>
-        <p class="soldout_tag">Sold Out</p>
-      </article>
-
-      <article class="product nedsat">
-        <img src="img/ape_krone.jpg" alt="Royal Gold Crown" />
-        <h3>Royal Gold Crown</h3>
-        <p class="product_type">Accessories | Ape Club</p>
-        <div class="price">
-          <p class="normal_pris">DKK 1299,-</p>
-          <p class="ny_pris">Now DKK 909,- <span>-30%</span></p>
-        </div>
-        <p><a href="product.html">Read More</a></p>
-        <p class="soldout_tag">Sold Out</p>
-      </article>
-
-      <article class="product udsolgt">
-        <img src="img/ape_kasket.jpg" alt="Black Rib Turtleneck" />
-        <h3>Black Rib Turtleneck</h3>
-        <p class="product_type">Apparel | Ape Club</p>
-        <div class="price">
-          <p class="normal_pris">DKK 699,-</p>
-          <p class="ny_pris">Now DKK 0,- <span>-0%</span></p>
-        </div>
-        <p><a href="product.html">Read More</a></p>
-        <p class="soldout_tag">Sold Out</p>
-      </article>
-
-      <article class="product nedsat udsolgt">
-        <img src="img/ape_jakke.jpg" alt="Neon Track Jacket" />
-        <h3>Neon Track Jacket</h3>
-        <p class="product_type">Sporting Goods | Ape Club</p>
-        <div class="price">
-          <p class="normal_pris">DKK 899,-</p>
-          <p class="ny_pris">Now DKK 674,- <span>-25%</span></p>
-        </div>
-        <p><a href="product.html">Read More</a></p>
-        <p class="soldout_tag">Sold Out</p>
-      </article>
-
-      <article class="product">
-        <img src="img/ape_skelet.jpg" alt="Skeleton T-shirt" />
-        <h3>Skeleton T-shirt</h3>
-        <p class="product_type">Free Items | Ape Club</p>
-        <div class="price">
-          <p class="normal_pris">DKK 0,-</p>
-          <p class="ny_pris">Now DKK 0,- <span>-0%</span></p>
-        </div>
-        <p><a href="product.html">Read More</a></p>
-        <p class="soldout_tag">Sold Out</p>
-      </article>
-      -->
-
-    </div>
+    <div class="product_list_container"></div>
   </main>
 </body>
 

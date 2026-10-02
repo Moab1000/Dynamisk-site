@@ -35,11 +35,6 @@ function getData(url) {
     });
 }
 
-// Tilbage-knap
-document.querySelector(".back_button").addEventListener("click", () => {
-  window.history.back();
-});
-
 // Filter: Category (skifter URL'en, så API'et henter nye produkter)
 const categoryButtons = document.querySelectorAll(".filter_category button");
 categoryButtons.forEach((button) => {

@@ -1,20 +1,34 @@
-/* ===== Tilbage-knap ===== */
-.back_button {
-  margin-bottom: 16px;
-  padding: 0.5rem 0.6rem;
-  font-weight: normal;
-  color: black;
-  background-color: var(--orange-light);
-}
-
-.back_button:hover {
-  background-color: var(--orange);
-}
-
-/* ===== Filtre ===== */
+/* ===== Filter-ikon ===== */
 .filters {
   margin-bottom: 24px;
 }
+
+.filter_icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 0.8rem;
+  margin-bottom: 8px;
+  font-weight: bold;
+  background-color: var(--orange-light);
+  cursor: pointer;
+  list-style: none;
+}
+
+.filter_icon::-webkit-details-marker {
+  display: none;
+}
+
+.filter_icon:hover {
+  background-color: var(--orange-mid);
+}
+
+.filters[open] .filter_icon {
+  background-color: var(--orange);
+  color: white;
+}
+
+/* ===== Filtre ===== */
 
 .filter_group h3 {
   font-size: 16px;

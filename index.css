@@ -13,27 +13,25 @@ h2 {
 /* ===== Kort ===== */
 .card {
   display: block;
-  overflow: hidden;
   text-decoration: none;
-  background-color: white;
-  border: 1px solid rgb(207, 206, 206);
-  border-radius: 8%;
 }
 
 .card img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  border-radius: 12px;
 }
 
 .card span {
   display: block;
-  padding: 10px 0 24px;
-  font-size: 20px;
+  margin-top: 10px;
+  padding-left: 10px;
+  font-size: 18px;
   font-weight: bold;
-  text-align: center;
+  border-left: 4px solid var(--orange);
 }
 
 .card:hover span {
-  text-decoration: underline;
+  color: var(--orange);
 }

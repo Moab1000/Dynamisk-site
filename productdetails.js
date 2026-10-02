@@ -27,9 +27,11 @@ function showProduct(product) {
     discountClass = "nedsat";
   }
 
+  document.title = product.productdisplayname;
+
   document.querySelector(".breadcrumbs").innerHTML = `
     <li><a href="index.html">Home</a></li>
-    <li><a href="productlist.html">${product.category}</a></li>
+    <li><a href="productlist.html?category=${product.category}">${product.category}</a></li>
     <li>${product.productdisplayname}</li>
   `;
 
@@ -48,9 +50,16 @@ function showProduct(product) {
         <dd>${product.productdisplayname}</dd>
         <dt>Color</dt>
         <dd>${product.basecolour}</dd>
+        <dt>Season</dt>
+        <dd>${product.season}</dd>
+        <dt>Inventory number</dt>
+        <dd>${product.id}</dd>
         <dt>Description</dt>
         <dd class="description">${product.description}</dd>
       </dl>
+
+      <h2 class="brand">${product.brandname}</h2>
+      <p>${product.brandbio || ""}</p>
     </div>
 
     <div class="koeb_boks">

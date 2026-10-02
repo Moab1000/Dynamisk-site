@@ -22,11 +22,16 @@
   </header>
 
   <main>
-    <button class="back_button">&larr; Back</button>
-
     <h1>All Products</h1>
 
-    <section class="filters">
+    <details class="filters">
+      <summary class="filter_icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M3 4h18l-7 8v6l-4 2v-8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+        </svg>
+        Filter
+      </summary>
+
       <div class="filter_group filter_category">
         <h3>Category</h3>
         <button data-category="All">All</button>
@@ -67,7 +72,7 @@
         <button data-sort="low">Cheapest first</button>
         <button data-sort="high">Most expensive first</button>
       </div>
-    </section>
+    </details>
 
     <div class="product_list_container"></div>
   </main>
